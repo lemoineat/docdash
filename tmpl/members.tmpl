@@ -32,6 +32,11 @@ var self = this;
     <?js }); ?></ul>
 <?js } ?>
 
+<?js if (data.graphs && graphs.length) { ?>
+    <h5>Graph<?js= graphs.length > 1? 's':'' ?></h5>
+    <?js= this.partial('graphs.tmpl', graphs) ?>
+<?js } ?>
+
 <?js if (data.examples && examples.length) { ?>
     <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
     <?js= this.partial('examples.tmpl', examples) ?>

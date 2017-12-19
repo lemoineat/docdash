@@ -444,6 +444,13 @@ exports.publish = function(taffyData, opts, tutorials) {
     data().each(function(doclet) {
          doclet.attribs = '';
 
+         if (doclet.graphs) {
+            doclet.graphs = doclet.graphs.map(function(graph) {
+              return {
+                name: graph
+              };
+            });
+        }
         if (doclet.examples) {
             doclet.examples = doclet.examples.map(function(example) {
                 var caption, code;
